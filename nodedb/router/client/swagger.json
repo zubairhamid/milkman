@@ -1,0 +1,43 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API",
+    "version": "0.0.1"
+  },
+  "host":"127.0.0.1",
+  "paths": {
+    "/client/integrate/dummy": {
+      "post": {
+        "tags": ["/client/integrate/dummy"],
+        "summary": "client Server Dummy integration Call",
+        "in": "body",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "properties": {
+              "message": {
+                "type": "string"
+              }
+            }
+          },
+          "400": {
+            "properties": {
+              "message": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

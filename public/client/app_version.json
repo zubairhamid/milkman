@@ -1,0 +1,4 @@
+{
+    "IndexHTMLFileTextToReplace" : "#APP_VERSION#",
+    "AppVersion" : 0.01
+}

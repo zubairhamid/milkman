@@ -1,0 +1,15 @@
+{
+  "databaseName"            : "milkman",
+  "databaseModelPath"       : "./nodedb/databases/dbModel/model",
+  "databaseIP"              : "127.0.0.1",
+  "databasePort"            : "27017",
+  "serviceTo"               : "milkman",
+  "setLang"                 : "EN",
+  "isDbOn"                  : true,
+  "sessionTimedOut"         : 120,
+  "mailerSetting"           : {
+    "apiKey"                  : "key-5acc930347bdaeb1e7fc19c72184d6b7",
+    "domainName"              : "cloudmpower.com",
+    "fromEmail"               : "info@cloudmpower.com"
+  }
+}
