@@ -32,7 +32,7 @@
         {
             apiName             : 'checkDeviceInfo',
             apiType             : 'Query',
-            apiHandler          : parseRequest.parseRequestApi,
+            apiHandler          : parseBody.parseBodyApi,
             apiRedirect         : 'getSpecificRecord',
             moduleName          : getMethod.FileName.device,
             inSession           : false,
@@ -41,7 +41,7 @@
         {
             apiName             : 'getMilkService',
             apiType             : 'Query',
-            apiHandler          : parseRequest.parseRequestApi,
+            apiHandler          : parseBody.parseBodyApi,
             apiRedirect         : 'checkForDelivery',
             moduleName          : getMethod.FileName.device,
             inSession           : false,
