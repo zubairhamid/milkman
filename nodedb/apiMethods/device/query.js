@@ -33,14 +33,13 @@
                 var milkLeft = parseFloat(milkData.balance) - parseFloat(this.queryObj.needMilk);
 
                 if(milkLeft >= 0){
-                    result.userData.balance = JSON.stringify(milkLeft);
-                    result.save(function(err, ee){
-                        console.log(err, ee);
-                    });
+                    result.userData["balance"] = milkLeft;
+                    result.save();
                     this.callback(null, {response: {message: this.queryObj.needMilk + ' ltrs Delivered. Balance is ' + result.userData.balance + ' ltrs' }});
                 }else{
                     this.callback(null, {response: {message: 'Your balance is only ' + result.userData.balance + ' ltrs. Please rechange immediately.'}});
                 }
+                console.log(result);
             }
         }
     };
