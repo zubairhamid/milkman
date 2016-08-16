@@ -29,17 +29,18 @@
                 var error = this.errorResponse.OperationFailed;
                 this.callback(error, null);
             }else{
+                var isAvailable = false;
                 var milkData = result.userData;
                 var milkLeft = parseFloat(milkData.balance) - parseFloat(this.queryObj.needMilk);
 
                 if(milkLeft >= 0){
+                    isAvailable = true;
                     result.userData["balance"] = milkLeft;
                     result.save();
-                    this.callback(null, {response: {message: this.queryObj.needMilk + ' ltrs Delivered. Balance is ' + result.userData.balance + ' ltrs' }});
+                    this.callback(null, {response: {isAvailable: isAvailable, message: this.queryObj.needMilk + ' ltrs Delivered. Balance is ' + result.userData.balance + ' ltrs' }});
                 }else{
-                    this.callback(null, {response: {message: 'Your balance is only ' + result.userData.balance + ' ltrs. Please rechange immediately.'}});
+                    this.callback(null, {response: {isAvailable: isAvailable, message: 'Your balance is only ' + result.userData.balance + ' ltrs. Please rechange immediately.'}});
                 }
-                console.log(result);
             }
         }
     };
