@@ -19,7 +19,10 @@
         var Device = new Schema({
             deviceId                : {type: String, required: true },
             nfcId                   : {type: String, required: true, unique: true },
-            userData                : {}
+            userData                : {
+                name                : {type: String, required: true },
+                balance             : {type: Number, required: true }
+            }
         });
 
         Device.plugin(timestamps);
