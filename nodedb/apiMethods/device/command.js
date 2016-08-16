@@ -10,6 +10,7 @@
         registerDevice: function(commandObj, callback){
             this.callback = callback;
             this.commandObj = commandObj;
+            console.log(this.commandObj);
             this.commandObj.deviceId = this.utils.getToken();
 
             console.log(this.commandObj);
