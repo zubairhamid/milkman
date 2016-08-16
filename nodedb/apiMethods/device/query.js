@@ -34,7 +34,9 @@
 
                 if(milkLeft >= 0){
                     result.userData.balance = JSON.stringify(milkLeft);
-                    result.save();
+                    result.save(function(err, ee){
+                        console.log(err, ee);
+                    });
                     this.callback(null, {response: {message: this.queryObj.needMilk + ' ltrs Delivered. Balance is ' + result.userData.balance + ' ltrs' }});
                 }else{
                     this.callback(null, {response: {message: 'Your balance is only ' + result.userData.balance + ' ltrs. Please rechange immediately.'}});
