@@ -4,7 +4,7 @@
 
     var directResponseApi = function directResponseApi(rin , callback){
         this.response = rin;
-        this.body = rin.body;
+        this.body = rin.request.body;
         this.callback = callback;
         this.tnxId = rin.header['x-request-id'] || '';
     };
