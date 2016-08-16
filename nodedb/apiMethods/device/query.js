@@ -39,7 +39,7 @@
                     result.save();
                     this.callback(null, {response: {isAvailable: isAvailable, message: this.queryObj.needMilk + ' ltrs Delivered. Balance is ' + result.userData.balance + ' ltrs' }});
                 }else{
-                    this.callback(null, {response: {isAvailable: isAvailable, message: 'Your balance is only ' + result.userData.balance + ' ltrs. Please rechange immediately.'}});
+                    this.callback(null, {response: {isAvailable: isAvailable, message: 'Your balance is only ' + result.userData.balance + ' ltrs. Please recharge immediately.'}});
                 }
             }
         }
