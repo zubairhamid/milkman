@@ -10,6 +10,7 @@
         registerDevice: function(commandObj, callback){
             this.callback = callback;
             this.commandObj = commandObj;
+            this.commandObj.deviceId = this.utils.getToken();
 
             var resHandle = this.deviceSaved.bind(this);
             this.defaultSaveMethod(this.commandObj, resHandle);
