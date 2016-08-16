@@ -12,6 +12,7 @@
             this.commandObj = commandObj;
             this.commandObj.deviceId = this.utils.getToken();
 
+            console.log(this.commandObj);
             var resHandle = this.deviceSaved.bind(this);
             this.defaultSaveMethod(this.commandObj, resHandle);
         },
