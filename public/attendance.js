@@ -29,7 +29,7 @@ $(document).ready(function() {
         console.log(roomId);
         $.ajax({
             type: "POST",
-            contentType:"application/json",
+
             data: JSON.stringify({ "confId": "1", "roomId": roomId }),
             dataType: "json",
             crossOrigin: true,
