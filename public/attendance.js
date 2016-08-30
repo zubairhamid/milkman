@@ -20,6 +20,7 @@ $(document).ready(function() {
         for(var i=0;i<result.length;i++){
             value = value + "<option id='"+result[i].roomId+"'>"+result[i].roomName+"</option>"
         }
+        $("#roomIdSelect").html(value);
     };
 
     $("#roomIdSelect").on('change', function () {
