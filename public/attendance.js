@@ -29,7 +29,8 @@ $(document).ready(function() {
         console.log(roomId);
         $.ajax({
             type: "POST",
-            data: {"confId": "1", "roomId": roomId},
+            contentType: "application/json",
+            data: { "confId": "1", "roomId": roomId },
             dataType: "json",
             crossOrigin: true,
             url: "https://my.linqs.in/conf/room/stats",
