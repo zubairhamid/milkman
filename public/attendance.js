@@ -21,7 +21,7 @@ $(document).ready(function() {
             value = value + "<option id='"+result[i].roomId+"'>"+result[i].roomName+"</option>"
         }
         $("#roomIdSelect").html(value);
-        $("#checkInData").Datatable();
+        $("#checkInData").DataTable({});
     };
 
     $("#roomIdSelect").on('change', function () {
