@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
 
     var RoomListUpdate = function(result){
-        var value = "";
+        var value = "<option id='default'>Select Room</option>";
         for(var i=0;i<result.length;i++){
             value = value + "<option id='"+result[i].roomId+"'>"+result[i].roomName+"</option>"
         }
@@ -27,21 +27,26 @@ $(document).ready(function() {
         console.log($(this).val());
         var roomId = $("#roomIdSelect option:selected").attr('id');
         console.log(roomId);
-        $.ajax({
-            type: "POST",
+        if(roomId == "default"){
+            alert("Please select a room");
+        }else {
+            $.ajax({
+                type: "POST",
 
-            data: JSON.stringify({ "confId": "1", "roomId": roomId }),
-            dataType: "json",
-            crossOrigin: true,
-            url: "https://my.linqs.in/conf/room/stats",
-            success: function (result) {
-                console.log(result);
-                updateTable(result);
-            },
-            error: function (result) {
-                console.log(result);
-            }
-        });
+                data: JSON.stringify({ "confId": "1", "roomId": roomId }),
+                dataType: "json",
+                crossOrigin: true,
+                url: "https://my.linqs.in/conf/room/stats",
+                success: function (result) {
+                    console.log(result);
+                    updateTable(result);
+                },
+                error: function (result) {
+                    console.log(result);
+                }
+            });
+        }
+
     });
 
     var updateTable = function(data){
