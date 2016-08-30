@@ -46,7 +46,17 @@ $(document).ready(function() {
 
     var updateTable = function(data){
         var selectedData = [];
+        for(var i=0;i<data.confAttendees.length;i++){
+            selectedData.push({
+                "0" : data.confAttendees[i].name,
+                "1" : data.confAttendees[i].inTime,
+                "2" : data.confAttendees[i].outTime
+            })
+        }
 
-        $('#checkInData').DataTable();
+        $('#checkInData').DataTable({
+            destroy: true,
+            aaData : selectedData
+        });
     }
 } );
