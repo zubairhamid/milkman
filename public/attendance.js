@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     $("#roomIdSelect").on('change', function () {
         console.log($(this).val());
-        var roomId = $(this).attr('id');
+        var roomId = $("#roomIdSelect option:selected").attr('id');
         console.log(roomId);
         /*$.ajax({
             type: "POST",
