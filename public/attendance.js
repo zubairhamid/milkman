@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#checkInData').DataTable();
+
 
     $.ajax({
         type:"GET",
@@ -27,7 +27,7 @@ $(document).ready(function() {
         console.log($(this).val());
         var roomId = $("#roomIdSelect option:selected").attr('id');
         console.log(roomId);
-        /*$.ajax({
+        $.ajax({
             type: "POST",
             data: {"confId": "1", "roomId": roomId},
             dataType: "json",
@@ -35,10 +35,17 @@ $(document).ready(function() {
             url: "https://my.linqs.in/conf/room/stats",
             success: function (result) {
                 console.log(result);
+                updateTable(result);
             },
             error: function (result) {
                 console.log(result);
             }
-        });*/
+        });
     });
+
+    var updateTable = function(data){
+        var selectedData = [];
+
+        $('#checkInData').DataTable();
+    }
 } );
