@@ -45,7 +45,7 @@ $(document).ready(function() {
     });
 
     var updateTable = function(data){
-        var selectedData = [];
+        var selectedData = [];var values = "";
         for(var i=0;i<data.confAttendees.length;i++){
             selectedData.push({
                 "0" : data.confAttendees[i].name,
@@ -53,6 +53,9 @@ $(document).ready(function() {
                 "2" : data.confAttendees[i].outTime
             })
         }
+        values = '<li class="list-group-item">Session Name : "'+data.sessionName+'"</li> <li class="list-group-item">Start Time : "'+data.startTime+'"</li>' +
+            '<li class="list-group-item">End Time : "'+data.endTime+'"</li><li class="list-group-item">Total Attendees : "'+data.totalAttendees+'"</li>';
+        $("#sessionInfo").html(values);
 
         $('#checkInData').DataTable({
             destroy: true,
