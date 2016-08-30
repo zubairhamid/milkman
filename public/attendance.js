@@ -29,7 +29,12 @@ $(document).ready(function() {
         var roomId = $("#roomIdSelect option:selected").attr('id');
         console.log(roomId);
         if(roomId == "default"){
-            alert("Please select a room");
+            var selectedData = [];
+            $("#sessionInfo").html('<li class="list-group-item">Empty</li> ');
+            $('#checkInData').DataTable({
+                destroy: true,
+                aaData : selectedData
+            });
         }else {
             $.ajax({
                 type: "POST",
