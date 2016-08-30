@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#checkInData").Datatable();
+
 
     $.ajax({
         type:"GET",
